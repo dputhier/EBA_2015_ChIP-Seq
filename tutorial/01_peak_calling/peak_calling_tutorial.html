@@ -208,49 +208,106 @@ $(function() {
 		      see the IFB cloud dashboard page.</li>
 		  </ul>
 
-<!--
+		  <h3 class="expand">Shut down your previous virtual machine if still open</h3>
+
+		  <p><b>Warning</b>: in principle you should have shut
+		    down your virtual machine from yesterday's
+		    practical, in order to free the resources of the
+		    cloud. If this is not the case, please do it
+		    before creating a new virtual machine. </p>
+
+		  <p>Protocol to shut down your previous Virtual Machine (if required):
+		    <ol style="list-style-type: decimal">
+		      <li>In the cloud dashboard, click <b>Show Instances</b>.</li>
+		      <li>In the list of instance, check the box in
+			front of your previous virtual machine.</li>
+		      <li>At the top of the instance list, select the
+			**Shutdown** option and click **Go**.</li>
+		      <li>Confirm the shutting down. Wait a few
+			seconds and click <b>Show Instances</b> to
+			check the proper shutting down of the virtual
+			machine (it takes some times to shut down a
+			VM, since it performs the same operations as
+			when you properly shut down a real
+			computer.</li>
+		    </ol>
+		  </p>
+		    
+
+
 		  <h3 class="expand">Create a virtual hard drive (vDisk)</h3>
 		  
-		  <p>Note pour les participants de l'école de
-		    bioinformatique Aviesan 2015: en principe vous avez créé
-		    un disque dur virtuel lors du tutoriel d'introduction au
-		    cloud IFB. Si c'est le cas, vérifiez si votre disque dur
-		    est toujours disponible et passez à l'étape
-		    suivante.</p>
+		  <p>For this tutorial, we need to create a completely
+		    empty virtual disk (*vDisk*), and to mount it on a
+		    new instance of the virtual machine (*VM*)
+		    dedicated to ChIP-seq analysis.</p>
 		  
 		  <ol style="list-style-type: decimal">
 		    <li>In the dasboard, click on the <b>Show vDisks</b> button.</li>
-		    <li>Click <b>New vDisk</b>, set <b>Size</b> to <i>10</i>
-		      (i.e. 10 Gb) and set the <b>Name</b>
-		      to <i>tuto-chipseq-hdd</i>.
-			<ul><b><i>Beware !</i></b> Click <i>only once</i> on
-			  the <b>Create</b> button, even if it takes some time
-			  to close the window.
-			</ul>
+		    <li>Click <b>New vDisk</b>, set 
+		      <ul>
+			<li><b>Size</b>: <i>10</i>  (i.e. 10 Gb)</li>
+			<li><b>Name</b>: <i>tuto-chipseq-hdd</i>.</li>
+		      </ul>
+		      <ul><b><i>Beware !</i></b> Click <i>only once</i> on
+			the <b>Create</b> button, even if it takes some time
+			to close the window.
+		      </ul>
 		    </li>
 		  </ol>
 
 		  <center><a href="images/tuto-chipseq-hdd.png"><img width="60%" src="images/tuto-chipseq-hdd.png"></a></center>
+		    
+		    
+		    <h3 class="expand">Create an instance of the "EBA Galaxy ChIP-seq" virtual machine </h3>
+		    <ol style="list-style-type: decimal">
+		      <li>Click on <b>New Instance</b>.</li>
+		      <li>In the opened panel, select the following options: </li>
+		      <ul>
+			<li><b>Appliance</b>: <i>EBA15 Galaxy ChIP-Seq</i>.</li>
+			<li><b>Name</b>: <i><b>tuto-chipseq-vm</b></i> (vm stands for "Virtual Machine").</li>
+			<li><b>Type</b>: <b>c3.xlarge (4 CPUs 16Go)</b>.</li>
+			<li><b>Persistent disk</b>: select the virtual
+			  disk created at the previous
+			  step: <i>tuto-chip-seq-hdd</i>. 
+			  <ul>This <i>must</i> be a newly created, empty
+			    disk in order to properly mount the resources
+			    required for the tutorial.
+			  </ul>
+			</li>
+			<li>Press <b>Run</b>.</li>	      
+			<center><a href="images/tuto-chipseq-vm_with_hdd.png"><img width="60%" src="images/tuto-chipseq-vm_with_hdd.png"></a></center>
+			  <!--		      <center><a href="images/tuto-chipseq-vm.png"><img width="80%" src="images/tuto-chipseq-vm.png"></a></center>-->
+			</ul>
+			
+			<p><b>Note:</b> It will take a few minutes to
+			  start the virtual machine, and to initiate the
+			  Galaxy server. Click periodically on the
+			  button <b>View Instances</b> until you see a
+			  green circle in the row of
+			  your <i>tuto-chipseq-vm</i> instance.</p>
+			
+			<center><a href="images/tuto-chipseq-vm_created.png"><img width="60%" src="images/tuto-chipseq-vm_created.png"></a></center>
+			</ul>
+		      </ol>
+		      
+		      <h3 class="expand">Create an instance of the "EBA Galaxy ChIP-seq" virtual machine </h3>
+		      <ol style="list-style-type: decimal">
+			<li>Once the virtual machine has been created,
+			    right-click on the orange
+			    link <font color="orange"><b>http</b></font>
+			    and open it in a separate tab. This will
+			    allow you to keep a tab with the dashboard
+			    open, which will be needed after the
+			    tutorial, in order to shut down your
+			    VM.</li>
 
--->		
+			<li>It may take a few minutes before the
+			  Galaxy server becomes available. If you see a
+			  message "Service temporarily available", wait
+			  a minute or two and refresh the page.</li>
+		      </ol>
 
-		  <h3 class="expand">Create a galaxy instance</h3>
-		  <ul>
-		    <li>Click on <b>New Instance</b>.</li>
-		    <li>In the opened panel: </li>
-		    <ul>
-		      <li>Select <b>Appliance</b>: <i>EBA15 Galaxy ChIP-Seq</i>.</li>
-		      <li>Set <b>Name</b> to <i>tuto-chipSeq</i>.</li>
-		      <li>Set <b>Type</b> to <b>c3.xlarge (4 CPUs 16Go)</b>.</li>
-<!--		      <li>For **Persistent disk**, select the virtual disk you previously created: *tuto-chip-seq-hdd*.
-		      <center><a href="images/tuto-chipseq-vm_with_hdd.png"><img width="80%" src="images/tuto-chipseq-vm_with_hdd.png"></a></center>
-		      </li>-->
-		      <li>Press <b>Run</b>.</li>	      
-		      <center><a href="images/tuto-chipseq-vm.png"><img width="80%" src="images/tuto-chipseq-vm.png"></a></center>
-		    </ul>
-		  </ul>
-
-		  <br/>
 
 		</div>
 	      </div>             
@@ -273,7 +330,16 @@ $(function() {
 		<h3 class="expand">1 - About the dataset </h3>
 		<div class="collapse">
 
-		  <p>For this tutorial we will use ChIP-seq datasets produced by <a href='http://www.ncbi.nlm.nih.gov/pubmed/23172872'>Theodorou <i>et al</i></a>. The authors used ChIP-Seq technology in order to systematically identify Estrogen receptor (abbreviated as ER or ERS1) binding regions across the human genome. Importantly, they demonstrated that knock-down of GATA3 through siRNA strongly affect ESR1 binding sites. The corresponding abstract of the article is provided below.</p>
+		  <p>For this tutorial we will use ChIP-seq datasets
+		  produced
+		  by <a href='http://www.ncbi.nlm.nih.gov/pubmed/23172872'>Theodorou <i>et
+		  al</i></a>. The authors used ChIP-Seq technology in
+		  order to systematically identify Estrogen receptor
+		  (abbreviated as ER or ERS1) binding regions across
+		  the human genome. Importantly, they demonstrated
+		  that knock-down of GATA3 through siRNA strongly
+		  affect ESR1 binding sites. The corresponding
+		  abstract of the article is provided below.</p>
 
 		  <h5>Abstract</h5>
 		  <i><p>Estrogen receptor (ESR1) drives growth in the majority of human breast cancers by binding to regulatory elements and inducing transcription events that promote tumor growth. Differences in enhancer occupancy by ESR1 contribute to the diverse expression profiles and clinical outcome observed in breast cancer patients. GATA3 is an ESR1-cooperating transcription factor mutated in breast tumors; however, its genomic properties are not fully defined. <br>
@@ -282,24 +348,60 @@ $(function() {
 		    <p>Within the article, there is a section mentioning the accession number of the dataset produced :
 		      <h5>Data access</h5>
 
-		      <i>The microarray data and ChIP-seq data from this study have been deposited in the NCBI Gene Expression Omnibus (GEO) (http://www.ncbi.nlm.nih.gov/geo/) under accession nos. GSE39623 and <b>GSE40129</b>, respectively. </p></i>
+		      <i>The microarray data and ChIP-seq data from
+		      this study have been deposited in the NCBI Gene
+		      Expression Omnibus (GEO) (<a target="_blank"
+		      href="http://www.ncbi.nlm.nih.gov/geo/">http://www.ncbi.nlm.nih.gov/geo/</a>)
+		      under accession nos. GSE39623
+		      and <b>GSE40129</b>, respectively. </p></i>
 		    
 		  </div>
 		  
 		  <h3 class="expand">2 - Find the dataset on Gene Expression Omnibus </h3>
 		  <div class="collapse">
-		    <p>Gene Expression Omnibus (<a target="_blank" href='http://www.ncbi.nlm.nih.gov/geo/'>GEO</a>) is a public repository that provide tools to submit, access and mine functional genomics data.  Data may be related to array- or sequence-based technologies. For HTS data, GEO provides both processed data (such as *.bam, *.bed, *.wig files) and links to raw data. Raw data are available from the Sequence Read Archive (<a target="_blank" href='http://trace.ncbi.nlm.nih.gov/Traces/sra/'>SRA</a>) database (including 454, IonTorrent, Illumina, SOLiD, Helicos and Complete Genomics). Both web sites propose search engines to query their databases.  </p>
+		    <p>Gene Expression Omnibus (<a target="_blank"
+		    href='http://www.ncbi.nlm.nih.gov/geo/'>GEO</a>)
+		    is a public repository that provide tools to
+		    submit, access and mine functional genomics data.
+		    Data may be related to array- or sequence-based
+		    technologies. For HTS data, GEO provides both
+		    processed data (such as *.bam, *.bed, *.wig files)
+		    and links to raw data. Raw data are available from
+		    the Sequence Read Archive (<a target="_blank"
+		    href='http://trace.ncbi.nlm.nih.gov/Traces/sra/'>SRA</a>)
+		    database (including 454, IonTorrent, Illumina,
+		    SOLiD, Helicos and Complete Genomics). Both web
+		    sites propose search engines to query their
+		    databases.  </p>
 		    <p><b>Procedure : </b>
    		      <ol>
-			<li>Go to <a target="_blank" href="http://www.ncbi.nlm.nih.gov/geo/">GEO web site</a>.</li>
-			<li>Choose "Search" and paste <b>GSE40129</b> (GSE stands for GEO Series Experiment). Click "GO" to get information about this experiment.</li>
-			<li>In the "sample section" (middle of the page), click on "More" to visualize all sample names.</li>
-			<li>Click on GSM986059 hyperlink (GSM stands for GEO SaMple) to get information about this sample.</li>
-			<li>In the "relations" section, select "SRX176856" hyperlink to open the SRA page corresponding to this sample.</li> 
-			<li> Click on the SRR link (bottom left) to access the record of the run. </li>
-			<li>On the new page, click on the <b>Reads</b> tab to view the read sequence.</b>
+			<li>Go to <a target="_blank"
+				     href="http://www.ncbi.nlm.nih.gov/geo/">GEO
+			    web site</a>.</li>
+			<li>Choose "Search" and paste <b>GSE40129</b>
+			  (GSE stands for GEO Series Experiment). Click
+			  "GO" to get information about this
+			  experiment.</li>
+			<li>In the "sample section" (middle of the
+			  page), click on "More" to visualize all sample
+			  names.</li>
+			<li>Click on GSM986059 hyperlink (GSM stands
+			  for GEO SaMple) to get information about
+			  this sample.</li>
+			<li>In the "relations" section, select
+			"SRX176856" hyperlink to open the SRA page
+			corresponding to this sample.</li>
+			<li> Click on the SRR link (bottom left) to
+			  access the record of the run. </li>
+			<li>On the new page, click on the <b>Reads</b>
+			  tab to view the read sequence.</b>
 		      </ol>
-		      From there, you might also download the dataset as a .sra file, but we <b>will not do it in the context of this practical</b> (beware, this would take time and occupy disk space, since SRA files typically weight several hundred Mb !).
+		    </p>
+		    <p>From there, you might also download the dataset
+		      as a .sra file, but we <b>will not do it in the
+		      context of this practical</b> (beware, this
+		      would take time and occupy disk space, siidnce SRA
+		      files typically weight several hundred Mb !).
 		    </p>
 		    
 		    

@@ -35,6 +35,9 @@ Without filtering the peaks, the number of artifactual peaks can be relatively h
 
 **Question:** How many genes does remain after this filtering step?
 
+Alternatively we can use the [PAVIS software](http://manticore.niehs.nih.gov/pavis2/) to annotate the peaks (selec the Human/hg19 known genes and upload your peaks.
+
+
 ### 3. Visualize ChIP enrichment around a given feature
 Using the “deepTools heatmapper” we will try to visualize the local enrichment around the TSS for all known genes. Before drawing the heatmap we need to prepare the data by computing a summary matrix of the  local ChIP enrichment using “deepTools computeMatrix”.
 
@@ -58,7 +61,7 @@ For that specific step we will use the GREAT annotation tools. Connect to [GREAT
 **Question** Examine the enriched functional categories.
 
 ### 5. Integrative ChIP-seq analysis of regulatory elements
-In this part, we will use the ReMap  [ReMap](http://tagc.univ-mrs.fr/remap/index.php) software to compare the peaks obtained in the peaks calling tutorial to an extensive regulatory catalog of 8 million transcription factor binding regions defined by collecting all the peaks from ChIP-seq experiments from the ENCODE project + other public datasets from the GEO database. Note that on the ReMap Web site, the term "site" is used to denote a ChIP-seq peak, rather than the precise binding location of a transcription factor
+In this part, we will use the ReMap (http://tagc.univ-mrs.fr/remap/index.php) software to compare the peaks obtained in the peaks calling tutorial to an extensive regulatory catalog of 8 million transcription factor binding regions defined by collecting all the peaks from ChIP-seq experiments from the ENCODE project + other public datasets from the GEO database. Note that on the ReMap Web site, the term "site" is used to denote a ChIP-seq peak, rather than the precise binding location of a transcription factor
 
 ** Procedure**
 

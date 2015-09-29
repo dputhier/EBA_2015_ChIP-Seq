@@ -892,6 +892,7 @@ body .markdown-body
 <p><strong>Question:</strong> How many genes are in common between the two peak series?</p>
 <p>Without filtering the peaks, the number of artifactual peaks can be relatively high. Filter the peaks using a cutoff on the  FDR (&lt;5%) and the fold entichement (&gt;4) and perform again the annotation. </p>
 <p><strong>Question:</strong> How many genes does remain after this filtering step?</p>
+<p>Alternatively we can use the <a href="http://manticore.niehs.nih.gov/pavis2/">PAVIS software</a> to annotate the peaks (selec the Human/hg19 known genes and upload your peaks.</p>
 <h3 id="3-visualize-chip-enrichment-around-a-given-feature"><a name="user-content-3-visualize-chip-enrichment-around-a-given-feature" href="#3-visualize-chip-enrichment-around-a-given-feature" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3. Visualize ChIP enrichment around a given feature</h3>
 <p>Using the “deepTools heatmapper” we will try to visualize the local enrichment around the TSS for all known genes. Before drawing the heatmap we need to prepare the data by computing a summary matrix of the  local ChIP enrichment using “deepTools computeMatrix”.</p>
 <p><strong>Procedure</strong></p>

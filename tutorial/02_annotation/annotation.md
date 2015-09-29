@@ -12,29 +12,37 @@ Using the Galaxy tool “makeTSSDist” we will plot the agglomerative ChIP-seq 
 
 **Procedure**
 
-1. Select the peak to analyse. For example the ESR1 peaks.
-2. use the default parameters and run the software
+1. Connect to the "makeTSSDist" software in the Galaxy suite
+2. Select the peak to analyze form your history (For example the ESR1 peaks)
+3. Select the corresponding organism and use the default parameters to run the software
 
-**Question:** discus the distribution properties (e.g. modes, mean).
+**Question:** Discus the distribution properties (e.g. modes, mean).
 
 
 ### 2. Relate peaks to genes
-In this step, we will try to associate gene names to peaks that are close to known gene annotations. Using the Galaxy tool “AnnotatePeaks” annotate the peaks for 2 replicates (WT). Extract associated genes and compare the results. 
+In this step, we will try to associate gene names to peaks that are close to known gene annotations using the “AnnotatePeaks” tool.
 
-**Question:** How many genes are in common between the replicates?
+**Procedure**
+
+1. Connect to the “AnnotatePeaks” software in the Galaxy suite
+2. Select the peak to analyze form your history (For example the ESR1 peaks)
+3. Select the corresponding organism and use the default parameters to run the software
+4. Redo the analysis for a second set of peaks
+
+**Question:** How many genes are in common between the two peak series?
 
 Without filtering the peaks, the number of artifactual peaks can be relatively high. Filter the peaks using a cutoff on the  FDR (<5%) and the fold entichement (>4) and perform again the annotation. 
 
 **Question:** How many genes does remain after this filtering step?
 
 ### 3. Visualize ChIP enrichment around a given feature
-Using the “deepTools heatmapper” we will try to visualise the local enrichment around the TSS for all known genes. Before drawing the heatmap we need to prepare the data by computing a summary matrix of the  local ChIP enrichment using “deepTools computeMatrix”.
+Using the “deepTools heatmapper” we will try to visualize the local enrichment around the TSS for all known genes. Before drawing the heatmap we need to prepare the data by computing a summary matrix of the  local ChIP enrichment using “deepTools computeMatrix”.
 
 **Procedure**
 
-1. Download the required annotation file (here all UCSC annotated genes) from the UCSC genome browser (Table Browser, UCSC Genes as bed file). 
-2. Use the obtained annotation file and the previously computed bigWig H3K4me1  profile as an input to “computeMatrix”. 
-3. Use 'reference point’ as  the output option and ‘beginning of region’ as this reference point (TSS).
+1. Download the required annotation file (here all UCSC annotated genes) from the UCSC genome browser (go to Table Browser, UCSC Genes and download the annotation as bed file. Save this locally). 
+2. Use the obtained annotation file and the previously computed bigWig profile (from your history) as an input to “computeMatrix”. 
+3. Use 'reference point’ as  the output option and 'beginning of region’ as this reference point (TSS).
 4. Using the “heatmapper”, load the obtained matrix data and fill the desired options to plot the heat map.
 
 ### 4. Relate peaks to GO terms

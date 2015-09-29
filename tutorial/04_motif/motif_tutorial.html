@@ -415,15 +415,53 @@ $(function() {
 		      <br/>
 		      The <i>peak-motifs</i> output is formed by the following parts:
 		      <ol>
-			<li><b>Sequence Composition:</b>The distribution of sequence lengths provides a useful way to detect outlier peaks (i.e., exceptionally long peaks that may ‘dilute’ the motif signal) or irregular length distributions resulting from problems during the peak-calling procedure. Nucleotide and dinucleotide compositions are computed and displayed in the form of heat maps and positional profiles</li>
-			<img class="bordered" src="images/6_peak-motifs.png" alt="PMSC3" width="550"/> 
+			<li><b>Sequence Composition:</b> the
+			distribution of sequence lengths provides a
+			useful way to detect outlier peaks (i.e.,
+			exceptionally long peaks that may ‘dilute’ the
+			motif signal) or irregular length
+			distributions resulting from problems during
+			the peak-calling procedure. Nucleotide and
+			dinucleotide compositions are computed and
+			displayed in the form of heat maps and
+			positional profiles</li> <img class="bordered"
+			src="images/6_peak-motifs.png" alt="PMSC3"
+			width="550"/>
 			
-			<li><b>Motif Discovery:</b>The workflow combines four word-based pattern-discovery algorithms that rely on two complementary criteria (overrepresentation and positional bias) to detect exceptional words (oligonucleotides) and spaced pairs of words (dyads). Significant words are used as seeds to build probabilistic description of motifs (position-specific scoring matrices), indicating residue variability at each position of the motif, represented as logos.</li>
-			<img class="bordered" src="images/7_peak-motifs.png" alt="PMSC3" width="550"/> 
+			<li><b>Motif Discovery:</b> the workflow
+			combines four word-based pattern-discovery
+			algorithms that rely on two complementary
+			criteria (overrepresentation and positional
+			bias) to detect exceptional words
+			(oligonucleotides) and spaced pairs of words
+			(dyads). Significant words are used as seeds
+			to build probabilistic description of motifs
+			(position-specific scoring matrices),
+			indicating residue variability at each
+			position of the motif, represented as
+			logos.</li>  <img class="bordered"
+			src="images/7_peak-motifs.png" alt="PMSC3"
+			width="550"/>
 			
-			<li><b>Motif comparisons:</b> Discovered motifs are compared with one or several public databases of annotated motifs to predict associated transcription factors. Results of this comparison are also displayed as multiple motif alignments (click on the link indicated in the red box) to highlight matches with several annotated motifs (e.g., factors belonging to the same family, composite motifs bound by protein complexes). Motif comparison is performed against vertebrate transcription factors binding motifs from <a href="http://jaspar.genereg.net/" target='_blank'>JASPAR database</a>. </li>
-			<img class="bordered" src="images/8_peak-motifs.png" alt="PMSC3" width="550"/> 
-			<img class="bordered" src="images/9_peak-motifs.png" alt="PMSC3" width="550"/> 
+			<li><b>Motif comparisons:</b> discovered
+			motifs are compared with one or several public
+			databases of annotated motifs to predict
+			associated transcription factors. Results of
+			this comparison are also displayed as multiple
+			motif alignments (click on the link indicated
+			in the red box) to highlight matches with
+			several annotated motifs (e.g., factors
+			belonging to the same family, composite motifs
+			bound by protein complexes). Motif comparison
+			is performed against vertebrate transcription
+			factors binding motifs
+			from <a href="http://jaspar.genereg.net/"
+			target='_blank'>JASPAR database</a>. </li>
+			<img class="bordered"
+			src="images/8_peak-motifs.png" alt="PMSC3"
+			width="550"/> <img class="bordered"
+			src="images/9_peak-motifs.png" alt="PMSC3"
+			width="550"/>
 			<li><b>Binding site predictions:</b>Sequences are scanned with the discovered motifs to locate binding sites, and their positioning within peaks is analyzed (coverage, positional distribution along peaks).</li>
 			<img class="bordered" src="images/10_peak-motifs.png" alt="PMSC3" width="550"/> 
 			

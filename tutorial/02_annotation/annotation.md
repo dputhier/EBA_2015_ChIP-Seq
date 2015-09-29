@@ -12,7 +12,7 @@ Using the Galaxy tool “makeTSSDist” we will plot the agglomerative ChIP-seq 
 
 **Procedure**
 
-1. Select [siGATA_ER_E2_r3_MACS_peaks] peaks
+1. Select the peak to analyse. For example the ESR1 peaks.
 2. use the default parameters and run the software
 
 **Question:** discus the distribution properties (e.g. modes, mean).

@@ -266,10 +266,15 @@ $(function() {
             		  <div class="collapse"> 
             		    <img class="bordered" src="images/2_fetch_seq_result.png" alt="2_fetch_seq_result" width="550"/>
             		    <br/>
-            		    The program returns 3 links to files : the input BED file (coordinates), the corresponding sequences (FASTA file), and a log text file that contain information on the execution of the program.
+            		    The program returns 3 links to files : 
+			    <ol>
+			      <li>the input BED file (coordinates), </li>
+			      <li>the corresponding sequences (FASTA file), and </li>
+			      <li>a log text file providing information on the execution of the program.</li>
+			    </ol>
 			  </div>
    			</div>
-			<li>click on the link of the log file, and look for the number of sequences retrieved. </li> 
+			<li>Click on the link to the log file, and look for the number of sequences retrieved. </li> 
 			<div class="post">
    			  <div class="success"> Always check that you retrieved all sequences.<br/>
 			  </div>
@@ -279,10 +284,15 @@ $(function() {
             		    All sequences were retrieved.
 			  </div>
    			</div>
-			<li>The FASTA file contain the sequences. Download it (right click, save as...) on your computer to keep a copy of them.</li>
+			<li>The FASTA file contains the sequences. For
+			  the sake of safety and tractability,
+			  download it (right click, save as...) on
+			  your computer to keep a copy.</li>
 		      </ol>
 		      
-		      <div class="error">At this point, you should have retrieved the sequences corresponding to your coordinate (BED) file. 
+		      <div class="error">At this point, you should
+			have retrieved the sequences corresponding to
+			your coordinate (BED) file.
 		      </div>
 		      
 		    </div>         
@@ -313,33 +323,87 @@ $(function() {
 		    In this section we will get familiar with this tool and its general usage.
 		    
 		    <ol>
-                      <li> From the result page before, click on the button <b>peak-motifs</b> at the bottom of the page, to automatically transfer the sequences to this tool.
-			Note that peak-motifs is also accessible from the left menu, in the <b>NGS ChIP-seq</b></li>
-                      <li>A new page appear, displaying a form.</li>
-                      <img class="bordered" src="images/3_RSAT.png" alt="3_RSAT" width="550"/>
+                      <li>In the previous section, you used the RSAT
+			tool <i>fetch-sequences</i> to retrieve
+			sequences corresponding to ChIP-seq peaks.  At
+			the bottom of the <i>fetch-sequences</i>
+			result page, click on the
+			 <b>peak-motifs</b> button to automatically
+			transfer the sequences to this tool.  Note
+			that <i>peak-motifs</i> is also accessible
+			from the left menu, in the <b>NGS
+			ChIP-seq</b>, but this would give you an empty
+			form, whereas the <i>Next step</i> button
+			automatically transferred the fetched sequences to the
+			peak-motifs form.</li>
+                      <li>A new page appears, displaying a form.</li>
+                      <img class="bordered" src="images/3_RSAT.png"
+                      alt="3_RSAT" width="550"/>
                       <li>The default peak-motifs web form only displays the essential options. There are only two
-			mandatory parameters.<br/>
-			a. The title box, which you will set as <b>siGATA_ER_E2_r3</b></br>
-		      b. The sequences, that have been automatically passed from <b>fetch-sequences</b>. Alternatively, sequences can be pasted in the available box, input from a URL, and uploading a file from your computer. </li>
+			mandatory parameters.
+			<ol>
+			  <li>The title box, type a text that will
+			    allow you to remember the analysis, for
+			    example <b>siGATA_ER_E2_r3</b>.</li>
+			  <li> The sequences, that have been
+			    automatically passed
+			    from <b>fetch-sequences</b>. Alternatively,
+			    sequences can be pasted in the available
+			    box, input from a URL, and uploading a file
+			    from your computer. 
+			  </li>
+			</ol>
+		      </li>
 		    
-		    <li>We could launch the analysis like this, but we will now modify some of the advanced options in order to fine-tune the analysis according
-		      to your data set.	
-		      <ul><li> Open the "Reduce peak sequences" title, and make sure the "Cut peak sequences: +/- " option is set to <b>0</b> (we wish to analyse our full dataset)</li>
-			<li>Open the “Motif Discovery parameters” title, and check the oligomer sizes 6 and 7 (but not 8). Check "Discover over-represented spaced word pairs [dyad-analysis]"</li>
-			<img class="bordered" src="images/4_RSAT.png" alt="4_RSAT" width="550"/>
-			<li>Under “Compare discovered motifs with databases”, we'll keep "JASPAR core vertebrates" as the studied organism is human.</li>
-			<li>Under “Locate motifs and export predicted sites as custom UCSC tracks”, select "Peak coordinates specified in fasta headers of the test sequence file (Galaxy format)".</li>
-			<img class="bordered" src="images/5_RSAT.png" alt="5_RSAT" width="550"/>
+		    <li>It is already possible to launch the analysis
+		      like this (with all other default options), but
+		      we will now modify some of the advanced options
+		      in order to fine-tune the analysis according to
+		      our data set.
+		      <ul>
+			<li> Open the <b>"Reduce peak sequences"</b>
+			  title, and make sure that the option <i>"Cut
+			  peak sequences: +/- "</i> is set to <b>0</b>
+			  (we wish to analyse our full dataset)</li>
+			<li>Open the title <b>“Motif Discovery
+			  parameters”</b> title, and check
+			  the <i>oligomer sizes</i> 6 and 7 (but not
+			  8). Check <i>"Discover over-represented
+			    spaced word pairs [dyad-analysis]"</i></li>
+			<img class="bordered"
+			     src="images/4_RSAT.png" alt="4_RSAT"
+			     width="550"/>
+			<li>Under <b>“Compare discovered motifs with
+			    databases”</b>, we'll keep <i>"JASPAR core
+			    vertebrates"</i> as the studied organism is
+			  human.</li>
+			<li>Under <b>“Locate motifs and export
+			    predicted sites as custom UCSC tracks”</b>,
+			  select "Peak coordinates specified in fasta
+			  headers of the test sequence file (Galaxy
+			  format)".</li>  <img class="bordered"
+					       src="images/5_RSAT.png" alt="5_RSAT"
+					       width="550"/>
 		      </ul>
 		    </li>
 
-                    <li>You can indicate your email address in order to receive notification of the task submission and completion. This is particularly useful because the full analysis may take some time for very large datasets.</li>
+                    <li>You can indicate your email address in order
+                      to receive notification of the task submission and
+                      completion. This is particularly useful because
+                      the full analysis may take some time for very
+                      large datasets.</li>
                     
-                    
-   		    <li>Click “GO”. As soon as the query has been launched, you should receive an email indicating confirming the task submission, and providing a link to the future result page.</li>
+   		    <li>Click <b>GO</b>. As soon as the query has been
+   		      launched, you should receive an email confirming
+   		      the task submission, and providing a link to the
+   		      future result page.</li>
 		    
    		    
-   		    <li>The Web page also displays a link, You can already click on this link. The report will be progressively updated during the processing of the workflow.</b></li>
+   		      <li>The Web page also displays a link, on which
+   			you can already click. The report will be
+   			progressively updated and display intermediate
+   			results during the processing of the
+   			workflow.</b></li>
 
 		  <div class="post">
    		    <div class="success"> Understanding the <b> peak-motifs</b> result report .<br/>

@@ -42,7 +42,7 @@ For that specific step we will use the GREAT annotation tools. Connect to [GREAT
 
 ** Procedure**
 
-1. Connect the [GREAT](http://great.stanford.edu) web server
+1. Connect the [GREAT](http://great.stanford.edu) web server [http://great.stanford.edu](http://great.stanford.edu)
 2. select the genome assembly version (hg19)
 3. upload or paste the peaks obtained previously in BED format
 4. use the whole genome as background and run the software
@@ -50,7 +50,7 @@ For that specific step we will use the GREAT annotation tools. Connect to [GREAT
 **Question** Examine the enriched functional categories.
 
 ### 5. Integrative ChIP-seq analysis of regulatory elements
-In this part, we will use the ReMap  [ReMap](http://tagc.univ-mrs.fr/remap/index.php) software to compare the peaks obtained in the peaks calling tutorial to an extensive regulatory catalog of 8 million transcription factor binding sites.
+In this part, we will use the ReMap  [ReMap](http://tagc.univ-mrs.fr/remap/index.php) software to compare the peaks obtained in the peaks calling tutorial to an extensive regulatory catalog of 8 million transcription factor binding regions defined by collecting all the peaks from ChIP-seq experiments from the ENCODE project + other public datasets from the GEO database. Note that on the ReMap Web site, the term "site" is used to denote a ChIP-seq peak, rather than the precise binding location of a transcription factor
 
 ** Procedure**
 
